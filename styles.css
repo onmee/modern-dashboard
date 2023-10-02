@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/*Override default black outline in Chrome*/
+*:focus,*:hover{
+    outline:none;
+}
+
+body {
+    display: grid;
+    justify-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.dashboard-container {
+    width: clamp(800px, 100%, 2000px);
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: clamp(200px, 25%, 250px) 1fr;
+}
+
+header {
+    background-color: aqua;
+    grid-column: 2 / 3;
+}
+
+nav {
+    background-color: black;
+    grid-row: 1 / 3;
+}
+
+main {
+    background-color: green;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+/*Styles for a narrower screen*/
+@media (max-width: 800px) {
+    .dashboard-container {
+        width: 100vw;
+        min-width: 600px;
+        grid-template-rows: 1fr 5fr;
+        grid-template-columns: 1fr;
+    }
+    header {
+        grid-column: 1 / 3;
+    }
+    main {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+    nav {
+        position: fixed;
+        width: 200px;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 500ms ease-in-out;
+    }
+}
