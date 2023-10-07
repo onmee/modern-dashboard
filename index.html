@@ -82,12 +82,118 @@
         </nav>
         <main>
             <div class="info-card" id="top-card"></div>
-            <div class="info-card chart"></div>
-            <div class="info-card" id="bottom-card-1"></div>
-            <div class="info-card" id="bottom-card-2"></div>
+            <div class="info-card chart">
+                <img src="assets/chart.svg" alt="api-calls-chart">
+            </div>
+            <div class="info-card costs">
+                <div class="card-header">
+                    <div>Costs<p>API charges for the month in $</p></div>
+                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+                </div>
+                <div class="chart-container">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            </div>
+            <div class="info-card integrations">
+                <div class="card-header">
+                    <div>Integrations<p>Current API sources</p></div>
+                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+                </div>
+                <div class="api-sources">
+                    <img src="assets/openai.svg" alt="openai-logo">
+                    <div>OpenAI</div>
+                    <div class="active">Active</div>
+                </div>
+                <div class="api-sources">
+                    <img src="assets/twitter.svg" alt="twitter-logo">
+                    <div>Twitter</div>
+                    <div class="inactive">Inactive</div>
+                </div>
+                <div class="api-sources">
+                    <img src="assets/microsoft.svg" alt="microsoft-logo">
+                    <div>Microsoft</div>
+                    <div class="active">Active</div>
+                </div>
+                <div class="api-sources">
+                    <img src="assets/google.svg" alt="google-logo">
+                    <div>Google</div>
+                    <div class="active">Active</div>
+                </div>
+            </div>
             <div class="info-card activity"></div>
-            <div class="info-card tasks"></div>
+            <div class="info-card tasks">
+                <div class="card-header">
+                    <div>Tasks<p>Today's to-do list</p></div>
+                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+                </div>
+                <div class="task-choices">
+                    <div>
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1">Complete API update</label>
+                    </div>
+                    <div class="high">High</div>
+                </div>
+                <div class="task-choices">
+                    <div>
+                        <input type="checkbox" id="checkbox2">
+                        <label for="checkbox2">Open ticket #1235</label>
+                    </div>
+                    <div class="medium">Medium</div>
+                </div>
+                <div class="task-choices">
+                    <div>
+                        <input type="checkbox" id="checkbox3">
+                        <label for="checkbox3">Review error 404</label>
+                    </div>
+                    <div class="high">High</div>
+                </div>
+                <div class="task-choices">
+                    <div>
+                        <input type="checkbox" id="checkbox4">
+                        <label for="checkbox4">Close ticket #1234</label>
+                    </div>
+                    <div class="medium">Medium</div>
+                </div>
+                <div class="task-choices">
+                    <div>
+                        <input type="checkbox" id="checkbox5">
+                        <label for="checkbox5">Assess daily metrics</label>
+                    </div>
+                    <div class="low">Low</div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+<script src=""></script>
+<script>
+    const canvas = document.getElementById('pie-chart');
+
+    new Chart(canvas, {
+    type: 'pie',
+    plugins: [ChartDataLabels],
+    data: {
+      labels: ['OpenAI', 'Microsoft', 'Google', 'Twitter'],
+      datasets: [{
+        data: [4000, 3000, 1800, 700],
+        backgroundColor: ['#FF6384', '#36A2EB','#FFCE56', 'Green']
+      }]
+    },
+    options: {
+      responsive:true,
+      maintainAspectRatio: false,
+      plugins: {
+        datalabels: {
+          color: 'white',
+          font: {
+            weight: 'bold',
+            size: 15
+          },
+      }
+    }
+  },
+});
+</script>
 </html>
