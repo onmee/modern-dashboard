@@ -83,7 +83,13 @@
         <main>
             <div class="info-card" id="top-card"></div>
             <div class="info-card chart">
-                <img src="assets/chart.svg" alt="api-calls-chart">
+               <div class="card-header">
+                    <div>Usage<p>API calls month-to-date</p></div>
+                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+               </div>
+                <div class="chart-container">
+                    <canvas id="api-chart"></canvas>
+                </div>
             </div>
             <div class="info-card costs">
                 <div class="card-header">
@@ -167,7 +173,6 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-<script src=""></script>
 <script>
     const canvas = document.getElementById('pie-chart');
 
@@ -192,6 +197,38 @@
             size: 15
           },
       }
+    }
+  },
+});
+</script>
+<script>
+    const ctx = document.getElementById('api-chart');
+
+    new Chart(ctx, {
+    type: 'bar',
+    plugins: [ChartDataLabels],
+    data: {
+      labels: ['OpenAI', 'Microsoft', 'Google', 'Twitter'],
+      datasets: [{
+        label: 'Total API Calls for each source',
+        data: [43256, 31273, 18127, 7298],
+        backgroundColor: ['#FF6384', '#36A2EB','#FFCE56', 'Green']
+      }]
+    },
+    options: {
+      responsive:true,
+      maintainAspectRatio: false,
+      plugins: {
+        datalabels: {
+          color: 'white',
+          font: {
+            weight: 'bold',
+            size: 15,
+          },
+      },
+      legend: {
+        display: false,
+      },
     }
   },
 });
