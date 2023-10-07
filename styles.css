@@ -114,15 +114,23 @@ li:nth-child(7) {
     grid-column: 1 / 8;
 }
 
-.chart img {
+/*
+Fit SVG image in its container
+
+.chart img { 
     width: 100%;
     height: 100%; 
     object-fit: contain;
-}
+}*/
 
 .chart {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    grid-template-rows: 80px auto;
     grid-row: 2 / 6;
     grid-column: 1 / 8;
+    padding: 25px;
 }
 
 .costs {
