@@ -81,11 +81,28 @@
             </ul>
         </nav>
         <main>
-            <div class="info-card" id="top-card"></div>
+            <div class="info-card summary">
+                <div class="summary-items">
+                    <div class="summary-icon"><img src="assets/up-down.svg" alt="up-down"></div>
+                    <div class="summary-header">Total API Calls<p>345678</p></div>
+                </div>
+                <div class="summary-items">
+                    <div class="summary-icon"><img src="assets/speed.svg" alt="latency"></div>
+                    <div class="summary-header">Mean Latency<p>23ms</p></div>
+                </div>
+                <div class="summary-items">
+                    <div class="summary-icon"><img src="assets/account-cash.svg" alt="cost-dollars"></div>            
+                    <div class="summary-header">Total Costs<p>$9.5k</p></div>
+                </div>
+                <div class="summary-items">
+                    <div class="summary-icon"> <img src="assets/alert-circle-outline.svg" alt="alert"></div>
+                    <div class="summary-header">Alerts<p>109</p></div>
+                </div>
+            </div>
             <div class="info-card chart">
                <div class="card-header">
                     <div>Usage<p>API calls month-to-date</p></div>
-                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+                    <img src="assets/card-account-icon.svg" alt="card-account">
                </div>
                 <div class="chart-container">
                     <canvas id="api-chart"></canvas>
@@ -94,7 +111,7 @@
             <div class="info-card costs">
                 <div class="card-header">
                     <div>Costs<p>API charges for the month in $</p></div>
-                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+                    <img src="assets/card-account-icon.svg" alt="card-account">
                 </div>
                 <div class="chart-container">
                     <canvas id="pie-chart"></canvas>
@@ -103,7 +120,7 @@
             <div class="info-card integrations">
                 <div class="card-header">
                     <div>Integrations<p>Current API sources</p></div>
-                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+                    <img src="assets/card-account-icon.svg" alt="card-account">
                 </div>
                 <div class="api-sources">
                     <img src="assets/openai.svg" alt="openai-logo">
@@ -129,7 +146,7 @@
             <div class="info-card announce">
                 <div class="card-header">
                     <div>Announcement<p>Important updates</p></div>
-                    <img src="assets/card-account-icon.svg" alt="card-account-icon">
+                    <img src="assets/card-account-icon.svg" alt="card-account">
                 </div>
                 <div class="announce-items">
                     <div class="announce-items-header">Site Maintenance</div>
