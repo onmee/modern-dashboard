@@ -1,20 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 /*Override default black outline in Chrome*/
-*:focus,*:hover{
+*:focus,*:hover {
     outline:none;
 }
 
 * {
     margin: 0;
     padding: 0;
-  }
+}
+
+ul, li {
+    list-style: none;
+}
+
 
 body {
     display: grid;
     justify-items: center;
     font-family: 'Inter', sans-serif;
-    background-color: #dbd8e6;
+    background-color: #e5e5e5;
 }
 
 .dashboard-container {
@@ -23,7 +28,7 @@ body {
     display: grid;
     grid-template-rows: 0.70fr 5fr;
     grid-template-columns: clamp(200px, 25%, 250px) 1fr;
-    background-color: #e5e5e5;
+    background-color: #fff;
     border-radius: 20px;
     gap: 10px;
 }
@@ -35,7 +40,7 @@ header {
     grid-template-columns: 2.5fr 1fr;
     margin-left: -10px;
     align-items: center;
-    background-color: rgb(241, 192, 99);
+    background-color: rgb(252, 214, 145);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
@@ -68,7 +73,6 @@ header {
 }
 
 /*User profile and icons*/
-
 .user {
     display: flex;
     align-items: center;
@@ -84,7 +88,7 @@ header {
 nav {
     display: grid;
     grid-template-rows: 1fr 5fr;
-    background-color: #fff;
+    background-color: #dbd8e6;
     grid-row: 1 / 3;
 }
 
@@ -353,7 +357,7 @@ input[type="checkbox"] {
 
 
 /*Styles for a narrower screen*/
-@media (max-width: 800px) {
+/*@media (max-width: 800px) {
     .dashboard-container {
         width: 100vw;
         min-width: 600px;
@@ -374,4 +378,4 @@ input[type="checkbox"] {
         transform: translateX(-100%);
         transition: transform 500ms ease-in-out;
     }
-}
+}*/
