@@ -14,11 +14,11 @@ this design is best suited for larger screens.
 
 ### Resources used
 
-    - Figma (Design files)
-    - ChartJS (Responsive Charts)
+- Figma (Design files)
+- ChartJS (Responsive Charts)
 
 ### Built With
 
-    * HTML
-    * CSS (Grid + Flexbox)
-    * Javascript
+* HTML
+* CSS (Grid + Flexbox)
+* Javascript
