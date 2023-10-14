@@ -24,8 +24,6 @@ ul, li {
 
 
 body {
-    display: grid;
-    justify-items: center;
     font-family: 'Inter', sans-serif;
     background-color: #e5e5e5;
 }
