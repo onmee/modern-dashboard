@@ -35,6 +35,7 @@ body {
     grid-template-rows: 0.70fr 5fr;
     grid-template-columns: clamp(200px, 25%, 250px) 1fr;
     background-color: var(--card-background);
+    margin: auto;
     gap: 10px;
 }
 
